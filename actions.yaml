@@ -417,3 +417,23 @@ list-crush-rules:
       default: text
       description: "The output format, either json, yaml or text (default)"
   additionalProperties: false
+get-or-create-user:
+  description: "Get or create a user and it's capabilities."
+  params:
+    username:
+      type: string
+      description: "User ID to get or create."
+    mon-caps:
+      type: string
+      default: allow rw
+      description: "Monitor capabilities include r, w, x access settings or profile {name}."
+    osd-caps:
+      type: string
+      default: allow rw
+      description: "OSD capabilities include r, w, x, class-read, class-write access settings or profile {name}."
+delete-user:
+  description: "Delete a user."
+  params:
+    username:
+      type: string
+      description: "User ID to delete."
